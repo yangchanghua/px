@@ -1,4 +1,4 @@
-practicing git
+practicing git, changed by master
 add one line
 in topic branch
 add one line
