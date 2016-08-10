@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+  <New id="oracle" class="org.eclipse.jetty.plus.jndi.Resource">
+  	<Arg></Arg>
+    <Arg>jdbc/MERC_OMC_ThinJDBCDataSource</Arg>
+    <Arg>
+      <New class="org.apache.commons.dbcp.BasicDataSource">
+        <Set name="driverClassName">org.hsqldb.jdbc.JDBCDriver</Set>
+        <Set name="url">jdbc:hsqldb:hsql://127.0.0.1/MERC_OMC_ThinJDBCDataSource</Set>
+        <Set name="username">sa</Set>
+        <Set name="password"></Set>
+      </New>
+    </Arg>
+  </New>

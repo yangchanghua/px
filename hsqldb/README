@@ -1,0 +1,12 @@
+Scallfolding facilitates in this folder is aimming to create a database enabled Java EE environment for SMU.
+
+[Usage]
+1. Change or replace your context.xml in <tomcat_root>/conf/ folder
+2. Set your environment variable HSQLDB_HOME to your HSQLDB installation, e.g. /opt/hsqldb
+3. Start/stop db by execute start.sh or stop.sh
+
+
+[Windows Platform]
+It should be similar with this solution for Linux, to be supported later.
+
+
