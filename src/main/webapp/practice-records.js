@@ -1,8 +1,14 @@
 /**
  * Created by ych on 8/11/16.
  */
-ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope) {
+ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $log) {
     $scope.newProj = {};
+    $scope.newPractice = {
+        project: 0,
+        hours: 3,
+        date: moment(),
+        note: 'bootstrap dialog,form,button;angular-datepicker;moment v.s. date'
+    };
     $scope.formValues = {
         startDate: moment()
     };
@@ -64,5 +70,16 @@ ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope) {
         // $scope.newProj.startDate = $scope.startDate.toDate();
         $scope.newProj.startDate = $scope.formValues.startDate.clone().toDate();
         $scope.projects.push(angular.copy($scope.newProj));
+    }
+    $scope.addPractice = function() {
+        $log.log($scope.newPractice.project);
+        $scope.records.unshift(
+            {
+                project: $scope.projects[$scope.newPractice.project],
+                hours: $scope.newPractice.hours,
+                date: $scope.newPractice.date.clone().toDate(),
+                note: $scope.newPractice.note
+            }
+        )
     }
 })

@@ -67,7 +67,7 @@
                                 <label for="projectSelector" class="col-sm-3 control-label">Select project</label>
                                 <div class="col-sm-9">
                                     <select id="projectSelector" class="form-control" ng-model="newPractice.project">
-                                        <option ng-repeat="p in projects track by $index" value="$index">
+                                        <option ng-repeat="p in projects track by $index" value="{{$index}}">
                                             {{p.domain}} &gt {{p.subDomain}}
                                         </option>
                                     </select>
@@ -91,6 +91,10 @@
                                 <div class="col-sm-9">
                                     <textarea id="practiceNote" class="form-control" ng-model="newPractice.note" maxlength="150"></textarea>
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                                <button type="submit" class="btn btn-primary" ng-click="addPractice()">OK</button>
                             </div>
                         </div>
                     </div>
