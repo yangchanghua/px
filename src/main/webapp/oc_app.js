@@ -1,11 +1,22 @@
 /**
  * Created by ricyang on 16-8-5.
  */
-var ocApp = angular.module('ocApp', []);
+var ocApp = angular.module('ocApp', ['ngRoute', 'datePicker']);
 
-ocApp.controller('ocListController', function ocListController($scope) {
-    $scope.ocs = [
-        {name: "doctor"},
-        {name: "nurse"}
-    ];
+
+ocApp.directive('recordDetail', function () {
+    return {
+        templateUrl: 'recordDetail.tpl.html',
+        scope: {
+            record: '='
+        }
+    }
 });
+
+ocApp.config(['$routeProvider', function config($routeProvider){
+    $routeProvider.when(
+        '/records', {
+            templateUrl: 'records.html'
+        }
+    );
+}]);

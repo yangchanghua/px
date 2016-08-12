@@ -1,0 +1,24 @@
+div.record-detail-container {
+    padding: 20px 5px;
+}
+div.record-detail {
+    height: 200px;
+    border: 1px solid lightgreen;
+    border-radius: 3%;
+    background-color: #52ff93;
+    padding: 15px;
+}
+div.record-detail div.record-detail-header {
+    margin-bottom: 10px;
+}
+div.record-detail div.record-detail-row {
+    padding: 4px 0;
+}
+div.project-item {
+    padding: 10px;
+    border-bottom: 1px solid #d9edf7;
+    margin: 5px 0px;
+}
+div.new-practice-dialog textarea {
+    height: 75px;
+}

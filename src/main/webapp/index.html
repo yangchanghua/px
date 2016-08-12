@@ -8,7 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Bootstrap -->
-    <link href="node_modules/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="h10k.css" rel="stylesheet">
+    <link href="bower_components/angular-datepicker/dist/angular-datepicker.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,19 +20,23 @@
     <![endif]-->
     <title>occupation wikipedia</title>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="node_modules/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-    <script src="node_modules/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-datepicker/dist/angular-datepicker.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="oc_app.js"></script>
+    <script src="practice-records.js"></script>
+    <script src="navbar/navbar.js"></script>
 
 </head>
 <body ng-app="ocApp">
-<h1>Occupation wiki</h1>
 
-<a href="/ocs">Occupations</a>
-<ul ng-controller="ocListController">
-    <li ng-repeat="item in ocs">{{item.name}}</li>
-</ul>
+<navbar ng-controller="PxNavbarController"></navbar>
+
+<div ng-view></div>
+</div>
 </body>
 </html>
