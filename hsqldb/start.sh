@@ -10,7 +10,7 @@ exit 1
 fi
 
 DB_FILE_NAME=df_db_file
-SERVER_ARGS="--database.0 file:$DB_FILE_NAME --dbname.0 df_database --silent false"
+SERVER_ARGS="--database.0 file:$DB_FILE_NAME --dbname.0 outliers_db --silent false"
 java -cp $HSQLDB_HOME/lib/hsqldb.jar org.hsqldb.server.Server $SERVER_ARGS  > /dev/null 2>&1 &
 echo "Started in background, stop it using stop.sh"
 

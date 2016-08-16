@@ -15,6 +15,18 @@ ocApp.controller('PxNavbarController', function ($scope) {
         {
             name: 'reports',
             href: '#/reports'
+        },
+        {
+            name: 'ocs',
+            href: '/rest/ocs/list'
+        },
+        {
+            name: 'new',
+            href: '/rest/ocs/new'
+        },
+        {
+            name: 'count',
+            href: '/rest/ocs/count'
         }
     ]
 });
