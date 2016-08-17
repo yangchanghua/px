@@ -1,7 +1,7 @@
 /**
  * Created by ych on 8/11/16.
  */
-ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $log) {
+ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $http, $log) {
     $scope.newProj = {};
     $scope.newPractice = {
         project: 0,
@@ -13,6 +13,28 @@ ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $log) {
         startDate: moment()
     };
     $scope.today = moment();
+    $scope.getProjects = function() {
+        $http.get('http://localhost:8080/rest/ocs/list')
+            .then(
+            function successCallback(response) {
+                if (response.data) {
+                    response.data.forEach(function(e, i, a){
+                        $log.log(e);
+                        $scope.projects.unshift(e);
+                    })
+                }
+            }, function errorCallback(response){
+                    $log.error('cannot fetch projects' + response);
+                });
+    };
+    $scope.doNewProject = function (project) {
+        $http.post('http://localhost:8080/rest/ocs/new', project)
+            .then(function successCallback(response){
+                $log.info('new project saved');
+            })
+    }
+    $scope.getProjects();
+
     $scope.projects = [
         {
             domain: 'programming',
@@ -70,6 +92,7 @@ ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $log) {
         // $scope.newProj.startDate = $scope.startDate.toDate();
         $scope.newProj.startDate = $scope.formValues.startDate.clone().toDate();
         $scope.projects.push(angular.copy($scope.newProj));
+        $scope.doNewProject($scope.newProj);
     }
     $scope.addPractice = function() {
         $log.log($scope.newPractice.project);
@@ -81,5 +104,8 @@ ocApp.controller('StudyRecordsCtrl', function StudyRecordsCtrl($scope, $log) {
                 note: $scope.newPractice.note
             }
         )
+    }
+    $scope.deleteProject = function(index) {
+
     }
 })

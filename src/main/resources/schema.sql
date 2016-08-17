@@ -1,6 +1,5 @@
-Drop TABLE projects IF EXISTS;
 
-CREATE table projects (
+CREATE table IF NOT EXISTS projects (
 id INTEGER IDENTITY PRIMARY KEY,
   domain varchar(64),
   sub_domain varchar(64),

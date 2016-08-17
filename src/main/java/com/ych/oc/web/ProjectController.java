@@ -5,6 +5,7 @@ import com.ych.oc.data.OccupationRepo;
 import com.ych.oc.data.Project;
 import com.ych.oc.data.ProjectRepo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +20,7 @@ import java.util.Date;
  */
 @Controller
 @RequestMapping("/ocs")
-public class OccupationController {
+public class ProjectController {
 
     @Resource
     private OccupationRepo ocRepo;
@@ -28,24 +29,20 @@ public class OccupationController {
     private ProjectRepo projectRepo;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public @ResponseBody Collection<Occupation> get() {
-        return ocRepo.readAllOccupations();
+    public @ResponseBody Collection<Project> get() {
+        return projectRepo.getProjects();
     }
 
     @RequestMapping(value = "/count", method = RequestMethod.GET)
     public @ResponseBody int count(HttpServletRequest request) {
-        Project fake = new Project("fake domain", "subdomain", new Date(), 102);
-        projectRepo.addProject(fake);
-
         String path = request.getPathInfo();
         System.out.println(path);
         return ocRepo.count();
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.GET)
-    public @ResponseBody int newProject() {
-        Project fake = new Project("fake domain", "subdomain", new Date(), 102);
-        projectRepo.addProject(fake);
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public @ResponseBody int newProject(@RequestBody Project project) {
+        projectRepo.addProject(project);
         return 102;
     }
 }

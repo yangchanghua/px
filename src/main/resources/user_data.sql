@@ -1,1 +1,1 @@
-INSERT INTO projects (domain, sub_domain, start_date, hours) VALUES ('exercise', 'running', NULL, 0);
+delete from PROJECTS where DOMAIN like '%fake%';
