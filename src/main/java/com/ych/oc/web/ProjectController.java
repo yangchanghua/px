@@ -5,6 +5,7 @@ import com.ych.oc.data.OccupationRepo;
 import com.ych.oc.data.Project;
 import com.ych.oc.data.ProjectRepo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,7 +43,13 @@ public class ProjectController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public @ResponseBody int newProject(@RequestBody Project project) {
-        projectRepo.addProject(project);
-        return 102;
+        return projectRepo.addProject(project);
+    }
+
+    @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
+    public @ResponseBody int deleteProject(@PathVariable int id) {
+//        int id=0;
+        projectRepo.deleteProject(id);
+        return id;
     }
 }

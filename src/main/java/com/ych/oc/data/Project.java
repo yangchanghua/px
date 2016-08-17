@@ -6,6 +6,8 @@ import java.util.Date;
  * Created by ricyang on 16-8-16.
  */
 public class Project {
+
+    private int id;
     private String domain;
     private String subDomain;
     private Date startDate;
@@ -19,6 +21,13 @@ public class Project {
         this.subDomain = subDomain;
         this.startDate = startDate;
         this.hours = hours;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDomain() {

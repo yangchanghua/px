@@ -21,11 +21,20 @@
         </modal-dialog>
 
         <ul class="field-list list-unstyled">
-            <li ng-repeat="f in projects track by $index">
+            <li ng-repeat="f in projects track by f.id">
                 <div class="project-item">
                     <div>
                         <a>{{f.domain}}</a> &gt <a>{{f.subDomain}}</a>
-                        <button class="close" type="button" ng-click="deleteProject($index)">&times;</button>
+                        <button class="close" type="button" data-toggle="modal" data-target="#confirmDelete-{{f.id}}">&times;</button>
+                        <modal-dialog id="confirmDelete-{{f.id}}" dialog-title="Confirm delete" no-close="{{true}}">
+                            <dialog-body>
+                                Delete the project?
+                            </dialog-body>
+                            <dialog-footer>
+                                <button type="button" class="btn btn-danger" ng-click="deleteProject(f)" data-dismiss="modal">OK</button>
+                                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                            </dialog-footer>
+                        </modal-dialog>
                     </div>
                     <div><a>{{f.hours}} hours</a></div>
                     <div>since {{f.startDate|date:'yyyy-MM-dd'}}</div>
@@ -42,7 +51,7 @@
             <dialog-body>
                 <form-group for="projectSelector" label="Select project">
                     <select id="projectSelector" class="form-control" ng-model="newPractice.project">
-                        <option ng-repeat="p in projects track by $index" value="{{$index}}">
+                        <option ng-repeat="p in projects track by p.id" value="p.id">
                             {{p.domain}} &gt {{p.subDomain}}
                         </option>
                     </select>
