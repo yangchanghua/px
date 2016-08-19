@@ -48,7 +48,6 @@ public class ProjectController {
 
     @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
     public @ResponseBody int deleteProject(@PathVariable int id) {
-//        int id=0;
         projectRepo.deleteProject(id);
         return id;
     }

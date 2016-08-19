@@ -1,0 +1,109 @@
+/*C86*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C87*/SET SCHEMA PUBLIC
+CREATE table IF NOT EXISTS projects ( id INTEGER IDENTITY PRIMARY KEY, domain varchar(64), sub_domain varchar(64), start_date Date, hours int )
+CREATE TABLE IF NOT EXISTS PRACTICE ( ID INTEGER IDENTITY PRIMARY KEY, PROJECT_ID INTEGER, PRACTICE_DATE DATE, HOURS INTEGER, NOTE VARCHAR(255), FOREIGN KEY (PROJECT_ID) references PROJECTS(ID) )
+/*C88*/SET SCHEMA PUBLIC
+set schema PUBLIC
+/*C87*/DISCONNECT
+/*C89*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C90*/SET SCHEMA PUBLIC
+CREATE table IF NOT EXISTS projects ( id INTEGER IDENTITY PRIMARY KEY, domain varchar(64), sub_domain varchar(64), start_date Date, hours int )
+CREATE TABLE IF NOT EXISTS PRACTICE ( ID INTEGER IDENTITY PRIMARY KEY, PROJECT_ID INTEGER, PRACTICE_DATE DATE, HOURS INTEGER, NOTE VARCHAR(255), FOREIGN KEY (PROJECT_ID) references PROJECTS(ID) )
+DISCONNECT
+/*C91*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C92*/SET SCHEMA PUBLIC
+CREATE table IF NOT EXISTS projects ( id INTEGER IDENTITY PRIMARY KEY, domain varchar(64), sub_domain varchar(64), start_date Date, hours int )
+CREATE TABLE IF NOT EXISTS PRACTICE ( ID INTEGER IDENTITY PRIMARY KEY, PROJECT_ID INTEGER, PRACTICE_DATE DATE, HOURS INTEGER, NOTE VARCHAR(255), FOREIGN KEY (PROJECT_ID) references PROJECTS(ID) )
+INSERT INTO PRACTICE VALUES(0,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(1,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(2,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(3,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(4,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(5,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(6,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(7,23,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+/*C93*/SET SCHEMA PUBLIC
+set schema PUBLIC
+/*C92*/DISCONNECT
+/*C94*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C95*/SET SCHEMA PUBLIC
+CREATE table IF NOT EXISTS projects ( id INTEGER IDENTITY PRIMARY KEY, domain varchar(64), sub_domain varchar(64), start_date Date, hours int )
+CREATE TABLE IF NOT EXISTS PRACTICE ( ID INTEGER IDENTITY PRIMARY KEY, PROJECT_ID INTEGER, PRACTICE_DATE DATE, HOURS INTEGER, NOTE VARCHAR(255), FOREIGN KEY (PROJECT_ID) references PROJECTS(ID) )
+/*C97*/SET SCHEMA PUBLIC
+set schema PUBLIC
+DISCONNECT
+/*C99*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C98*/SET SCHEMA PUBLIC
+drop table PRACTICE
+/*C100*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C98*/drop table PROJECTS
+/*C101*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C96*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C95*/DISCONNECT
+/*C102*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C103*/SET SCHEMA PUBLIC
+CREATE table IF NOT EXISTS projects ( id INTEGER IDENTITY PRIMARY KEY, domain varchar(64), sub_domain varchar(64), start_date Date, hours int )
+CREATE TABLE IF NOT EXISTS PRACTICE ( ID INTEGER IDENTITY PRIMARY KEY, PROJECT_ID INTEGER, PRACTICE_DATE DATE, HOURS INTEGER, NOTE VARCHAR(255), FOREIGN KEY (PROJECT_ID) references PROJECTS(ID) ON DELETE CASCADE )
+/*C104*/SET SCHEMA PUBLIC
+INSERT INTO PROJECTS VALUES(0,'web developing','angularJS','2016-08-19',0)
+COMMIT
+INSERT INTO PROJECTS VALUES(1,'web developing','Spring java','2016-08-02',0)
+COMMIT
+INSERT INTO PRACTICE VALUES(0,0,'2016-08-17',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(1,0,'2016-08-18',4,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PROJECTS VALUES(2,'test','test','2016-08-19',0)
+COMMIT
+INSERT INTO PRACTICE VALUES(2,2,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+INSERT INTO PRACTICE VALUES(3,2,'2016-08-19',3,'bootstrap dialog,form,button;angular-datepicker;moment v.s. date')
+COMMIT
+DELETE FROM PROJECTS WHERE ID=2
+DELETE FROM PRACTICE WHERE ID=2
+DELETE FROM PRACTICE WHERE ID=3
+COMMIT
+DELETE FROM PROJECTS WHERE ID=1
+COMMIT
+DELETE FROM PROJECTS WHERE ID=0
+DELETE FROM PRACTICE WHERE ID=0
+DELETE FROM PRACTICE WHERE ID=1
+COMMIT
+INSERT INTO PROJECTS VALUES(3,'Programming','web development','2016-02-03',0)
+COMMIT
+INSERT INTO PRACTICE VALUES(4,3,'2016-02-25',20,'read html+css book; read css definitive guide and blog.\u000aCannot remember all techiques, but got solid understanding of CSS.')
+COMMIT
+INSERT INTO PRACTICE VALUES(5,3,'2016-03-25',20,'Spring + Hiberate: read books about them. \u000aIt''s not good without practicing.')
+COMMIT
+INSERT INTO PRACTICE VALUES(6,3,'2016-04-28',20,'Javascript: read the definitive guide')
+COMMIT
+INSERT INTO PRACTICE VALUES(7,3,'2016-05-26',27,'AngularJS: start from examples and study line by line. This is better than quickly go through chapters without really understand and memorize them.')
+COMMIT
+INSERT INTO PRACTICE VALUES(8,3,'2016-04-01',27,'Front-end: learn html, css, JS, angularJS from imooc.\u000aIt''s mandatory for starter')
+COMMIT
+INSERT INTO PRACTICE VALUES(9,3,'2016-08-16',20,'Front-end: build a angular app, use bootstrap; find date-picker for angular from github; make directives from bootstrap elements. Feel good!')
+COMMIT
+INSERT INTO PRACTICE VALUES(10,3,'2016-08-19',20,'Back-end: hsqldb, configure datasource in tomcat, spring data source for JNDI, Spring JdbcTemplate is good enough for simple app.No ORM yet.')
+COMMIT
+/*C105*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C88*/DISCONNECT
+/*C103*/DISCONNECT
+/*C104*/DISCONNECT

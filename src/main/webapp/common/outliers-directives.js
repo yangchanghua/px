@@ -24,4 +24,11 @@ ocApp.directive('modalDialog', function(){
         transclude: true,
         replace: true
     }
-})
+}).directive('recordDetail', function () {
+    return {
+        templateUrl: 'recordDetail.tpl.html',
+        scope: {
+            record: '='
+        }
+    }
+});

@@ -50,8 +50,8 @@
         <modal-dialog id="addPracticeDialog" dialog-title="Add practice record">
             <dialog-body>
                 <form-group for="projectSelector" label="Select project">
-                    <select id="projectSelector" class="form-control" ng-model="newPractice.project">
-                        <option ng-repeat="p in projects track by p.id" value="p.id">
+                    <select id="projectSelector" class="form-control" ng-model="newPractice.projId">
+                        <option ng-repeat="p in projects track by p.id" value="{{p.id}}">
                             {{p.domain}} &gt {{p.subDomain}}
                         </option>
                     </select>
@@ -61,12 +61,11 @@
                     <input id="practiceHours" type="number" class="form-control" ng-model="newPractice.hours">
                 </form-group>
 
-                <form-group for="practiceDate" label="Date">
-                    <input date-time id="practiceDate" class="form-control" min-view="date" max-date="today"
-                           ng-model="newPractice.date" format="YYYY-MM-DD" view="date">
+                <form-group for="in-prac-date" label="Date">
+                    <input date-time id="in-prac-date" class="form-control" min-view="date" max-date="today"
+                           ng-model="newPractice.practiceDate" format="YYYY-MM-DD" view="date">
                 </form-group>
                 <form-group for="practiceNote" label="Note">
-
                     <textarea id="practiceNote" class="form-control" ng-model="newPractice.note" maxlength="150"></textarea>
                 </form-group>
             </dialog-body>
